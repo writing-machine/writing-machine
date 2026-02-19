@@ -22,7 +22,7 @@ import click
               help='single: one-shot stdin→stdout. '
                    'interactive: line-delimited JSON loop.')
 def run(provider_api_key, github_token, mode):
-    """machine-name: an AI agent communicating via stdin/stdout.
+    """writing-machine: an AI agent communicating via stdin/stdout.
 
     In 'single' mode (default): reads a full JSON array from stdin,
     responds once, and exits.
