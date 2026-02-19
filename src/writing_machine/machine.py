@@ -55,8 +55,10 @@ def machine(messages):
 
     # Load an appropriate library and query the API.
     provider = settings['provider']
+    api_key  = settings['provider_api_key']
     if provider == 'OpenAI':
         # Call OpenAI API via opehaina
+        environ['OPENAI_API_KEY'] = api_key
         import opehaina
         text, thoughts = opehaina.stream(
             messages=messages,
@@ -67,6 +69,7 @@ def machine(messages):
 
     elif provider == 'Anthropic':
         # Call the Anthropic API via electroid
+        environ['ANTHROPIC_API_KEY'] = api_key
         import electroid
         text, thoughts = electroid.stream(
             messages=messages,

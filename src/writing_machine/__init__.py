@@ -9,8 +9,6 @@ from .config import settings
 from .machine import machine
 from .githf import connect_to_repo, read_file
 
-config = dict()
-
 __all__ = [
     'machine',
     'connect_to_repo',
